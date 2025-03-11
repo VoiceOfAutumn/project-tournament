@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #212528;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-btn {
+    background-color: #ffffff;
+    color: #212528;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-btn:hover {
+    background-color: #dddddd;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 50px); /* Subtract navbar height */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #212528;
+    width: 16.67%; /* 1/6th of the page width */
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+}
+
+/* Navigation List */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margin between navlists */
+}
+
+.sidebar-nav li {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-weight: 300; /* Apply Poppins Light (300 weight) */
+    color: #81878C;
+}
+
+.sidebar-nav li:hover {
+    color: #E5E5E5;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #212528;
+    display: grid; /* Use grid to manage layout */
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto 1fr; /* Two rows */
+    gap: 40px; /* Space between blocks */
+    position: relative; /* Set the content to relative for positioning */
+}
+
+/* Block styles */
+.block {
+    background-color: #292d30;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    color: #333;
+}
+
+.news {
+    background-image: url('https://i.imgur.com/sBf2tgw.png');
+    background-size: cover;
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 1000px;
+    height: 220px; /* Set a fixed height */
+}
+
+.rest {
+    width: 400px;
+    height: 100px; /* Set a fixed height */
+}
+
+.tournaments {
+    text-align: center;
+    color: #E5E5E5;
+    width: 1000px;
+    height: 500px; /* Set a fixed height */
+}
+
+.tournaments-table {
+    width: 100%;
+    border-collapse: collapse; /* Makes borders collapse together */
+}
+
+.tournaments-table th, .tournaments-table td {
+    padding: 12px;
+    text-align: center;
+    color: #E5E5E5;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;  /* Hides overflow */
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+}
+
+.tournaments-table th {
+    color: #81878C;
+    border-bottom: 1px solid #3f4447; /* Adds a visible bottom border */
+    border-top: none; /* Ensures the top border is removed */
+    border-left: none; /* Removes left border */
+    border-right: none; /* Removes right border */
+}
+
+.tournament-img {
+    width: 40px;  /* Adjust size as needed */
+    height: 40px;
+    border-radius: 50%;  /* Makes it circular */
+    object-fit: cover;  /* Ensures the image covers the circle */
+    margin-right: 10px;  /* Adds spacing between image and text */
+    vertical-align: middle;  /* Aligns image with text */
+    border: 1px solid #34383c;  /* Adds a border around the image */
+}
+
+.tournaments-table td:first-child {
+    font-weight: 600;  /* SemiBold */
+    max-width: 275px;
+}
+
+.tournaments-table td:nth-child(2) {
+    font-size: 12px;
+    font-weight: 400;
+    color: #81878C;
+}
+
+.tournaments-table td:nth-child(3) {
+    font-size: 12px;
+    font-weight: 400;
+    color: #81878C;
+}
+
+.tournaments-table td:nth-child(4) {
+    font-size: 15px;
+    color: #E5E5E5;
+}
+
+
+.leaderboards {
+    color: #E5E5E5;
+    width: 400px;
+    height: 610px; /* Set a fixed height */
+    position: relative; /* Make sure it's relative to the container */
+    top: -110px; /* Move the leaderboards up by 40px */
+    overflow: hidden; /* Prevents any content from overflowing outside the block */
+}
+
+.leaderboards-table {
+    width: 100%;
+    border-collapse: collapse; /* Makes borders collapse together */
+    font-size: 14px;
+}
+
+.leaderboards-table th, .leaderboards-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.leaderboards-table td:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center; /* Aligns the image and text vertically */
+    justify-items: center; /* Centers the image horizontally with the text */
+}
+
+.leaderboards-table td:nth-child(3) {
+    font-size: 14px;
+    font-weight: 400;
+    color: #81878C;
+}
+
+.rank-img {
+    width: 25px;  /* Adjust size as needed */
+    height: 25px;
+    border-radius: 50%;  /* Makes it circular */
+    object-fit: cover;  /* Ensures the image covers the circle */
+    margin-right: 10px;  /* Adds spacing between image and text */
+    vertical-align: middle;  /* Aligns image with text */
+    border: 1px solid #34383c;  /* Adds a border around the image */
+}
